@@ -1,4 +1,4 @@
-01_001_01=Växtbelysning=bool=1
-01_002_01=Desktop lamp 2=percent=100
+01_001_01=Växtbelysning=bool=0
+01_002_01=Desktop lamp 2=percent=12
 02_001_01=Fuktmätare 1=static percent=12
 03_001_01=Persiender=bool=0

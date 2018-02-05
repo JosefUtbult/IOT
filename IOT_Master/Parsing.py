@@ -2,12 +2,12 @@ import flask
 import os
 
 
-def variable(variables):
+def variable(variables):                #Parses a command, loads a file with data, changes the file, saves it and return the value
     variables = variables.split('&')
     output = dict()
 
     for currentVariable in variables:
-        seperatedVal = currentVariable.split('=')
+        seperatedVal = currentVariable.split('=')       #Parses the command from the url
 
         if len(seperatedVal) >= 2:
             output[seperatedVal[0]] = seperatedVal[1]
@@ -15,11 +15,7 @@ def variable(variables):
         else:
             print("Could not parse" + currentVariable)
 
-            #
-            #
-            #
-
-    dictOfUnits = load_file()
+    dictOfUnits = load_file()       #Loades the file to dictOfUnits, a dict containing dicts of different variables
 
     if output.get("id") not in dictOfUnits:
         print("Could not find unit with id '%s'" % output.get("id"))
