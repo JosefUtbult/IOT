@@ -1,17 +1,12 @@
-def parseVariable(variables):
-    output = parseVariable(variables)
-
-    print("id=%s, operation=%s, value=%s" % (output.get("id"), output.get("o"), output.get("v")))
-
-def parseVariables(variables):
-    variables = variables.split('&')
+def parseVariables(variables):          #Takes a string and returns a dict of dicts
+    variables = variables.split('&')    #Splits the variables string at every different operator
     output = dict()
 
     for currentVariable in variables:
-        seperatedVal = currentVariable.split('=')
+        seperatedVal = currentVariable.split('=')   #Splits the operator and the value
 
         if len(seperatedVal) >= 2:
-            output[seperatedVal[0]] = seperatedVal[1]
+            output[seperatedVal[0]] = seperatedVal[1]   #Adds the value to an operator-instance in the output-dict
 
             print("Parsed to %s = %s"%(seperatedVal[0], seperatedVal[1]))
 
@@ -19,4 +14,4 @@ def parseVariables(variables):
             print("Could not parse" + currentVariable)
 
 
-    return output
+    return output       #Returns the resulting dict
